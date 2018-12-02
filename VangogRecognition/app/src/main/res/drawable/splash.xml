@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:drawable="@color/splash_color"/>
+    <item>
+        <bitmap
+            android:id="@+id/imageView"
+            android:gravity="center"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:src="@drawable/logo_v"/>
+    </item>
+
+</layer-list>
