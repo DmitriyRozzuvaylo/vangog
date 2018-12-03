@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright 2013 The Android Open Source Project
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<resources>
+    <string name="app_name">Vangog</string>
+    <string name="info_message">
+        <summary>
+        <![CDATA[Компания "ВАНГОГ"\n
+        Изготовление печатей и штампов!\n\n
+        Свяжитесь с нами сейчас:\n\n
+         09:00 - 19:00 (с Понедельника по Пятницу)\n
+         +38 (066) 256 999 7\n
+         +38 (096) 256 999 7\n
+        ]]>
+        </summary>
+    </string>
+    <string name="info_stamp">
+        <summary>
+        <![CDATA[Поместите отпечаток печати в центр круга.\n
+        Вращайте до появления скрытых изображений.
+        ]]>
+        </summary>
+    </string>
+</resources>
