@@ -15,4 +15,7 @@
 -->
 <resources>
     <style name="MaterialTheme" parent="android:Theme.Material.Light.NoActionBar.Fullscreen" />
+    <style name="VangogDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">@color/control_background</item>
+    </style>
 </resources>

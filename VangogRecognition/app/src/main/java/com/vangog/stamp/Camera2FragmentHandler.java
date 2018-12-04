@@ -184,7 +184,9 @@ public class Camera2FragmentHandler extends Fragment
 	 */
 	private Size mPreviewSize;
 
-	private ImageView mKey;
+	private ImageView mKeyP;
+    private ImageView mKeyL;
+    private ImageView mField;
 
 	/**
 	 * {@link CameraDevice.StateCallback} is called when {@link CameraDevice} changes its state.
@@ -473,8 +475,14 @@ public class Camera2FragmentHandler extends Fragment
 		view.findViewById(R.id.picture).setOnClickListener(this);
 		view.findViewById(R.id.info).setOnClickListener(this);
 
-		mKey = view.findViewById(R.id.imageView);
-		mKey.setImageResource(R.drawable.key);
+		mKeyP = view.findViewById(R.id.imageView);
+		mKeyP.setImageResource(R.drawable.key_portrain);
+
+        mKeyL = view.findViewById(R.id.imageView);
+        mKeyL.setImageResource(R.drawable.key_lanscape);
+
+        mField = view.findViewById(R.id.imageViewField);
+        mField.setImageResource(R.drawable.field);
 
 		mTextureView = view.findViewById(R.id.texture);
 	}
@@ -735,6 +743,7 @@ public class Camera2FragmentHandler extends Fragment
 			// We set up a CaptureRequest.Builder with the output Surface.
 			mPreviewRequestBuilder
 					= mCameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_PREVIEW);
+			mPreviewRequestBuilder.set(CaptureRequest.CONTROL_EFFECT_MODE, CaptureRequest.CONTROL_EFFECT_MODE_MONO);
 			mPreviewRequestBuilder.addTarget(surface);
 
 			// Here, we create a CameraCaptureSession for camera preview.
@@ -948,7 +957,7 @@ public class Camera2FragmentHandler extends Fragment
 			case R.id.info: {
 				Activity activity = getActivity();
 				if (null != activity) {
-					new AlertDialog.Builder(activity)
+					new AlertDialog.Builder(activity, R.style.VangogDialogTheme)
 							.setMessage(R.string.info_message)
 							.setPositiveButton(android.R.string.ok, null)
 							.show();

@@ -30,6 +30,7 @@ public class CameraActivity extends Activity {
                     .replace(R.id.container, Camera2FragmentHandler.newInstance())
                     .commit();
         }
+
     }
 
 }
