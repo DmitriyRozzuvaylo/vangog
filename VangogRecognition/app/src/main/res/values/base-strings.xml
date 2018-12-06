@@ -17,22 +17,10 @@
 
 <resources>
     <string name="app_name">Vangog</string>
-    <string name="info_message">
-        <summary>
-        <![CDATA[Компания "ВАНГОГ"\n
-        Изготовление печатей и штампов!\n\n
-        Свяжитесь с нами сейчас:\n\n
-         09:00 - 19:00\n
-         (с Понедельника по Пятницу)\n
-         +38 (066) 256 999 7\n
-         +38 (096) 256 999 7\n
-        ]]>
-        </summary>
-    </string>
     <string name="info_stamp">
         <summary>
-        <![CDATA[Поместите отпечаток печати в центр квадрата.\n
-        Вращайте до появления скрытых изображений.
+        <![CDATA[The place of printing stamp in the center of the square.\n
+        Rotate until hidden images appear.
         ]]>
         </summary>
     </string>

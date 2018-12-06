@@ -21,8 +21,8 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.app.DialogFragment;
-import android.app.Fragment;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.Fragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
@@ -185,7 +185,6 @@ public class Camera2FragmentHandler extends Fragment
 	private Size mPreviewSize;
 
 	private ImageView mKeyP;
-    private ImageView mKeyL;
     private ImageView mField;
 
 	/**
@@ -473,13 +472,9 @@ public class Camera2FragmentHandler extends Fragment
 	@Override
 	public void onViewCreated(final View view, Bundle savedInstanceState) {
 		view.findViewById(R.id.picture).setOnClickListener(this);
-		view.findViewById(R.id.info).setOnClickListener(this);
 
 		mKeyP = view.findViewById(R.id.imageView);
 		mKeyP.setImageResource(R.drawable.key_portrain);
-
-        mKeyL = view.findViewById(R.id.imageView);
-        mKeyL.setImageResource(R.drawable.key_lanscape);
 
         mField = view.findViewById(R.id.imageViewField);
         mField.setImageResource(R.drawable.field);
@@ -517,10 +512,10 @@ public class Camera2FragmentHandler extends Fragment
 	}
 
 	private void requestCameraPermission() {
-		if (FragmentCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)) {
+		if (shouldShowRequestPermissionRationale(Manifest.permission.CAMERA)) {
 			new ConfirmationDialog().show(getChildFragmentManager(), FRAGMENT_DIALOG);
 		} else {
-			FragmentCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA},
+			requestPermissions(new String[]{Manifest.permission.CAMERA},
 					REQUEST_CAMERA_PERMISSION);
 		}
 	}
@@ -954,7 +949,7 @@ public class Camera2FragmentHandler extends Fragment
 				takePicture();
 				break;
 			}
-			case R.id.info: {
+			/*case R.id.info: {
 				Activity activity = getActivity();
 				if (null != activity) {
 					new AlertDialog.Builder(activity, R.style.VangogDialogTheme)
@@ -963,7 +958,7 @@ public class Camera2FragmentHandler extends Fragment
 							.show();
 				}
 				break;
-			}
+			}*/
 		}
 	}
 
@@ -1069,7 +1064,7 @@ public class Camera2FragmentHandler extends Fragment
 					.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
 						@Override
 						public void onClick(DialogInterface dialog, int which) {
-							FragmentCompat.requestPermissions(parent,
+							requestPermissions(
 									new String[]{Manifest.permission.CAMERA},
 									REQUEST_CAMERA_PERMISSION);
 						}

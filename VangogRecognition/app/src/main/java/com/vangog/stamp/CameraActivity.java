@@ -26,9 +26,9 @@ public class CameraActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
         if (null == savedInstanceState) {
-            getFragmentManager().beginTransaction()
+            /*getFragmentManager().beginTransaction()
                     .replace(R.id.container, Camera2FragmentHandler.newInstance())
-                    .commit();
+                    .commit();*/
         }
 
     }
